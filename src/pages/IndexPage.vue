@@ -1,11 +1,9 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 import { Loading } from 'quasar'
-// const text = ref('')
-// const directoryPath = ref('')
-const copyornot = ref(false)
-const ratioPercentage = ref(0)
-const minSize = ref(0)
+
+const ratioPercentage = ref(90)
+const minSize = ref(500)
 const images = ref<Array<string>>([])
 const copyDirectoryPath = ref('')
 
@@ -13,15 +11,6 @@ const calcPercentage = computed(() => {
   return 100 - ((100 * ratioPercentage.value) / 100)
 })
 
-// const save = async () => {
-//   await window.api.saveTextFile(text.value)
-// }
-// const load = async () => {
-//   text.value = await window.api.loadTextFile()
-// }
-// const getDirectory = async () => {
-//   directoryPath.value = await window.api.getDirectoryPath()
-// }
 const getImages = async () => {
   images.value = await window.api.getImages()
   console.log(images.value)
@@ -91,21 +80,6 @@ const resizeImages = async () => {
             <q-btn flat :label="images.length > 0 ? '사진 다시 선택하기' : '사진 선택하기'" @click="getImages"></q-btn>
         </q-card-actions>
       </q-card>
-      <!-- <q-card>
-        <q-card-section class="bg-secondary text-white">
-          <div class="row">
-            <q-icon name="create_new_folder" :size="'sm'" />
-            <p class="text-subtitle1 text-weight-bold q-ml-md">사본 폴더 생성</p>
-          </div>
-          <p class="text-body">변경된 사진을 사본 폴더에 저장하시겠습니까?</p>
-        </q-card-section>
-
-        <q-separator />
-
-        <q-card-actions align="right">
-          <q-toggle class="col-1" v-model="copyornot" left-label size="lg" color="accent" />
-        </q-card-actions>
-      </q-card> -->
       <q-card>
         <q-card-section class="bg-secondary text-white">
           <div class="row">
@@ -169,12 +143,5 @@ const resizeImages = async () => {
     <q-page-sticky position="bottom-right" :offset="[30, 30]">
       <q-btn @click="resizeImages" fab icon="arrow_forward" color="accent" label="시작하기" />
     </q-page-sticky>
-    <!-- <q-card v-else>
-      <q-card-actions>
-        <q-btn label="save" @click="save"></q-btn>
-        <q-btn label="load" @click="load"></q-btn>
-        <q-btn label="폴더 선택" @click="getDirectory"></q-btn>
-      </q-card-actions>
-    </q-card> -->
   </q-page>
 </template>

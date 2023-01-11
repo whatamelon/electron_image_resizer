@@ -8,9 +8,9 @@
               Image Resizer
           </router-link>
         </q-toolbar-title>
-        <router-link to="/setting" style="text-decoration:none; color:white;">
+        <!-- <router-link to="/setting" style="text-decoration:none; color:white;">
           <q-icon name="settings" :size="'sm'" />
-        </router-link>
+        </router-link> -->
 
       </q-toolbar>
     </q-header>
