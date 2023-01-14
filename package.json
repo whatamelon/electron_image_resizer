@@ -9,8 +9,7 @@
     "lint": "eslint --ext .js,.ts,.vue ./",
     "test": "echo \"No test specified\" && exit 0",
     "dev": "quasar dev -m electron",
-    "build": "quasar build -m electron",
-    "window-build": "quasar dev -m electron '--' --no-sandbox --disable-setuid-sandbox"
+    "build": "quasar build -m electron"
   },
   "dependencies": {
     "@quasar/extras": "^1.0.0",

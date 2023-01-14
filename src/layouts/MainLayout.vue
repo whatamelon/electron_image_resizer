@@ -3,10 +3,8 @@
     <q-header elevated>
       <q-toolbar class="bg-secondary">
 
-        <q-toolbar-title>
-          <router-link to="/" style="text-decoration:none; color:white;">
-              Image Resizer
-          </router-link>
+        <q-toolbar-title style="font-weight:bold; font-style:italic;">
+          Image Resizer by Denny🔥
         </q-toolbar-title>
         <!-- <router-link to="/setting" style="text-decoration:none; color:white;">
           <q-icon name="settings" :size="'sm'" />

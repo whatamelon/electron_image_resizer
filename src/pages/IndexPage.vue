@@ -29,14 +29,14 @@ const resizeImages = async () => {
         message: '이미지 리사이징 중입니다.',
         backgroundColor: 'black'
       })
-      const b = images.value[0].lastIndexOf('/')
+      const b = images.value[0].lastIndexOf('\\')
 
-      copyDirectoryPath.value = images.value[0].slice(0, b) + '/resize/'
+      copyDirectoryPath.value = images.value[0].slice(0, b) + '\\resize\\'
       for (const i in images.value) {
-        console.log(copyDirectoryPath.value + images.value[i].split('/').pop())
+        console.log(copyDirectoryPath.value + images.value[i].split('\\').pop())
         const originPath = images.value[i]
         const savePath = copyDirectoryPath.value
-        const imgName = images.value[i].split('/').pop()
+        const imgName = images.value[i].split('\\').pop()
         const percentage = ratioPercentage.value
         const minimum = minSize.value
         const r = await window.api.resizeImage(
